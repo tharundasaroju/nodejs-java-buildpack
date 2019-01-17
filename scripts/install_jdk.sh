@@ -9,7 +9,6 @@ DEPS_IDX=$4
 JDK_VERSION="11.0.1"
 
 export JdkInstallDir=$BUILD_DIR/jdk
-echo $JdkInstallDir
 
 mkdir -p $JdkInstallDir
 
@@ -27,9 +26,10 @@ if [ ! -f $JdkInstallDir/jdk-11.0.1/bin/java ]; then
   #   exit 1
   # fi
 
-  tar xzvf /tmp/jdk.tar.gz -C $JdkInstallDir
+  tar xzf /tmp/jdk.tar.gz -C $JdkInstallDir
   ls
   rm /tmp/jdk.tar.gz
+  echo "jdk is installed"
 fi
 if [ ! -f $JdkInstallDir/jdk-11.0.1/bin/java ]; then
   echo "       **ERROR** Could not download jdk"
