@@ -12,9 +12,9 @@ export JdkInstallDir=$BUILD_DIR/jdk
 
 mkdir -p $JdkInstallDir
 
-if [ ! -f $JdkInstallDir/jdk-11.0.1/bin/java ]; then
+if [ ! -f $JdkInstallDir/jdk-11.0.2/bin/java ]; then
   # JDK_SHA256="fb26c30e6a04ad937bbc657a1b5bba92f80096af1e8ee6da6430c045a8db3a5b"
-  URL=https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz
+  URL=https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
 
   echo "-----> Download jdk ${JDK_VERSION}"
   curl -s -L --retry 15 --retry-delay 2 $URL -o /tmp/jdk.tar.gz
@@ -31,7 +31,7 @@ if [ ! -f $JdkInstallDir/jdk-11.0.1/bin/java ]; then
   rm /tmp/jdk.tar.gz
   echo "jdk is installed"
 fi
-if [ ! -f $JdkInstallDir/jdk-11.0.1/bin/java ]; then
+if [ ! -f $JdkInstallDir/jdk-11.0.2/bin/java ]; then
   echo "       **ERROR** Could not download jdk"
   exit 1
 fi
